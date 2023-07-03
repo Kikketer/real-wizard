@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 30, in script
+    with disolve
+  File "game/script.rpy", line 30, in <module>
+    with disolve
+NameError: name 'disolve' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 30, in script
+    with disolve
+  File "/Users/chris/Documents/renpy-8.1.1-sdk/renpy/ast.py", line 1671, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "/Users/chris/Documents/renpy-8.1.1-sdk/renpy/python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/chris/Documents/renpy-8.1.1-sdk/renpy/python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 30, in <module>
+    with disolve
+NameError: name 'disolve' is not defined
+
+macOS-10.14.6-x86_64-i386-64bit x86_64
+Ren'Py 8.1.1.23060707
+renpywiz 1.0
+Mon Jul  3 18:52:31 2023
