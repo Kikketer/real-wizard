@@ -1,15 +1,17 @@
 import cv2
 import numpy as np
 import time
-from picamera2 import PiCamera2
-from picamera2.array import PiRGBArray
+from picamera import PiCamera
+from picamera.array import PiRGBArray
 
 def long_exposure():
     # Set up our PiCamera
-    camera = PiCamera2()
+    camera = PiCamera()
     camera.resolution = (640, 480)  # You may change this
-    camera.framerate = 24  # Set the framerate at 24 fps
+    camera.framerate = 15  # Set the framerate at 15 fps
     raw_capture = PiRGBArray(camera, size=(640, 480))  # You may change this
+    
+    camera.start_preview()
 
     # Allow camera to warmup
     time.sleep(0.1)
@@ -37,5 +39,7 @@ def long_exposure():
 
     # Write out our stacked image to a file
     cv2.imwrite("stacked.jpg", stack_img)
+    
+    camera.stop_preview()
 
 long_exposure()
